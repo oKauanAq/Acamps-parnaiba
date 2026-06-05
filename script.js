@@ -2,7 +2,10 @@
   Interações leves da landing page:
   - Troca o bloco "Vídeo em breve" por iframe se um link real do YouTube for informado.
   - Abre apenas uma pergunta do FAQ por vez.
+  - Revela blocos com animações leves conforme entram na tela.
 */
+document.documentElement.classList.add("js");
+
 const PLACEHOLDER_VALUES = new Set([
   "",
   "COLOCAR_LINK_VIDEO_AQUI",
@@ -69,3 +72,27 @@ function setupFaqAccordion() {
 
 renderVideo();
 setupFaqAccordion();
+
+
+function setupScrollReveal() {
+  const items = document.querySelectorAll(".reveal-on-scroll");
+  if (!items.length) return;
+
+  if (!("IntersectionObserver" in window)) {
+    items.forEach((item) => item.classList.add("is-visible"));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+
+      entry.target.classList.add("is-visible");
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.16 });
+
+  items.forEach((item) => observer.observe(item));
+}
+
+setupScrollReveal();
