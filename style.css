@@ -17,15 +17,21 @@
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
   background: var(--cream);
   color: var(--ink);
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", "Segoe UI", system-ui, sans-serif;
+  overflow-x: hidden;
+  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 16px;
-  line-height: 1.6;
+  font-weight: 400;
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
 }
 
 body::before {
@@ -41,6 +47,8 @@ body::before {
 }
 
 img, iframe { max-width: 100%; }
+
+img { display: block; }
 
 a { color: inherit; }
 
@@ -71,7 +79,7 @@ a { color: inherit; }
   position: relative;
   min-height: 100svh;
   overflow: hidden;
-  padding: 1.05rem 1.1rem 3.4rem;
+  padding: .9rem 1rem 3rem;
   color: var(--white);
   isolation: isolate;
 }
@@ -120,7 +128,7 @@ a { color: inherit; }
   align-items: center;
   gap: .65rem;
   text-decoration: none;
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: .01em;
   text-transform: uppercase;
 }
@@ -147,8 +155,8 @@ a { color: inherit; }
   max-width: 12rem;
   text-align: right;
   font-size: .68rem;
-  font-weight: 900;
-  line-height: 1.05;
+  font-weight: 800;
+  line-height: 1.15;
   letter-spacing: .11em;
   text-transform: lowercase;
 }
@@ -159,7 +167,7 @@ a { color: inherit; }
   padding: .5rem .85rem;
   text-decoration: none;
   font-size: .84rem;
-  font-weight: 900;
+  font-weight: 800;
   backdrop-filter: blur(8px);
 }
 
@@ -167,10 +175,10 @@ a { color: inherit; }
   position: relative;
   z-index: 2;
   display: grid;
-  min-height: calc(100svh - 6rem);
+  min-height: auto;
   align-content: center;
-  gap: 1.6rem;
-  padding: 2rem 0 1rem;
+  gap: 1.35rem;
+  padding: clamp(2.6rem, 8vh, 5rem) 0 1rem;
 }
 
 .hero-copy { max-width: 47rem; }
@@ -180,7 +188,7 @@ a { color: inherit; }
   margin: 0 0 .72rem;
   color: inherit;
   font-size: .76rem;
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: .14em;
   text-transform: uppercase;
 }
@@ -201,15 +209,15 @@ a { color: inherit; }
 }
 
 .hero h1 {
-  font-size: clamp(6.2rem, 29vw, 16rem);
-  line-height: .76;
+  font-size: clamp(4.5rem, 26vw, 16rem);
+  line-height: .78;
   text-shadow: 0 12px 0 rgba(184, 90, 26, .32), 0 24px 48px rgba(96, 40, 0, .24);
 }
 
 .hero h2 {
   max-width: 12ch;
   margin-top: .75rem;
-  font-size: clamp(2.1rem, 10vw, 5.7rem);
+  font-size: clamp(1.9rem, 9vw, 5.7rem);
   text-shadow: 0 10px 24px rgba(86, 36, 0, .18);
 }
 
@@ -217,8 +225,9 @@ a { color: inherit; }
   max-width: 38rem;
   margin: 1.25rem 0 1.5rem;
   font-family: "Segoe UI", system-ui, sans-serif;
-  font-size: 1.06rem;
-  font-weight: 800;
+  font-size: 1.03rem;
+  font-weight: 500;
+  line-height: 1.65;
 }
 
 .button {
@@ -232,7 +241,7 @@ a { color: inherit; }
   text-align: center;
   text-decoration: none;
   font-family: "Segoe UI", system-ui, sans-serif;
-  font-weight: 950;
+  font-weight: 800;
   box-shadow: 0 18px 34px rgba(61, 36, 23, .24);
   transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
 }
@@ -291,7 +300,7 @@ a { color: inherit; }
 .ticket-kicker,
 .hero-ticket small {
   font-family: "Segoe UI", system-ui, sans-serif;
-  font-weight: 950;
+  font-weight: 800;
   letter-spacing: .10em;
   text-transform: uppercase;
 }
@@ -299,6 +308,7 @@ a { color: inherit; }
 .hero-ticket strong {
   margin: .25rem 0 .2rem;
   color: var(--burnt);
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", "Segoe UI", system-ui, sans-serif;
   font-size: clamp(2.9rem, 15vw, 5rem);
   line-height: .82;
 }
@@ -313,8 +323,9 @@ a { color: inherit; }
   position: absolute;
   z-index: 1;
   color: var(--burnt);
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", "Segoe UI", system-ui, sans-serif;
   font-size: clamp(4rem, 18vw, 15rem);
-  font-weight: 950;
+  font-weight: 900;
   line-height: .8;
   letter-spacing: -.05em;
   opacity: .22;
@@ -365,7 +376,7 @@ a { color: inherit; }
 
 .section {
   position: relative;
-  padding: 4.25rem 1.1rem;
+  padding: 3.5rem 1rem;
 }
 
 .curve-top { padding-top: 2.8rem; }
@@ -386,7 +397,8 @@ a { color: inherit; }
   margin: .85rem auto 0;
   max-width: 40rem;
   font-family: "Segoe UI", system-ui, sans-serif;
-  font-weight: 800;
+  font-weight: 500;
+  line-height: 1.65;
 }
 
 .video-frame {
@@ -425,6 +437,7 @@ a { color: inherit; }
 
 .video-placeholder strong {
   display: block;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", "Segoe UI", system-ui, sans-serif;
   font-size: clamp(1.9rem, 7vw, 4rem);
   line-height: .9;
   text-transform: uppercase;
@@ -433,7 +446,8 @@ a { color: inherit; }
 .video-placeholder p {
   margin: .7rem 0 0;
   font-family: "Segoe UI", system-ui, sans-serif;
-  font-weight: 800;
+  font-weight: 500;
+  line-height: 1.55;
 }
 
 .play-icon {
@@ -450,16 +464,60 @@ a { color: inherit; }
 
 .about { padding-top: 1rem; }
 
+.about-layout {
+  display: grid;
+  gap: 1.1rem;
+  max-width: 1080px;
+  margin: 0 auto;
+  align-items: center;
+}
+
 .blob-card {
   position: relative;
   max-width: 960px;
-  margin: 0 auto;
+  margin: 0;
   overflow: hidden;
   border: 4px solid rgba(68, 199, 199, .42);
   border-radius: 40px;
   padding: 2rem;
   background: var(--white);
   box-shadow: var(--shadow);
+}
+
+.photo-frame {
+  overflow: hidden;
+  margin: 0;
+  border: 4px solid var(--teal);
+  border-radius: 32px;
+  background: var(--white);
+  box-shadow: 0 18px 42px rgba(61, 36, 23, .16);
+}
+
+.about-photo {
+  position: relative;
+  min-height: 16rem;
+  transform: rotate(1.6deg);
+}
+
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  min-height: 16rem;
+  object-fit: cover;
+}
+
+.about-photo figcaption {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  border-radius: 999px;
+  padding: .45rem .85rem;
+  background: rgba(255, 255, 255, .88);
+  color: var(--burnt);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
 }
 
 .blob-card::after {
@@ -477,8 +535,9 @@ a { color: inherit; }
   position: relative;
   margin: 1rem 0 0;
   font-family: "Segoe UI", system-ui, sans-serif;
-  font-size: 1.05rem;
-  font-weight: 750;
+  font-size: 1.03rem;
+  font-weight: 500;
+  line-height: 1.7;
 }
 
 .diagonal-section {
@@ -545,7 +604,7 @@ details {
   display: block;
   font-family: "Segoe UI", system-ui, sans-serif;
   font-size: .78rem;
-  font-weight: 950;
+  font-weight: 800;
   letter-spacing: .12em;
   text-transform: uppercase;
 }
@@ -555,6 +614,7 @@ details {
   position: relative;
   z-index: 1;
   display: block;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", "Segoe UI", system-ui, sans-serif;
   font-style: normal;
   line-height: .84;
   text-transform: uppercase;
@@ -577,8 +637,9 @@ details {
 .card h3 {
   margin: 0;
   color: var(--burnt);
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", "Segoe UI", system-ui, sans-serif;
   font-size: 1.16rem;
-  line-height: 1.05;
+  line-height: 1.15;
   text-transform: uppercase;
 }
 
@@ -592,7 +653,7 @@ details {
   background: rgba(246, 138, 18, .14);
   color: var(--orange-dark);
   font-size: 1.55rem;
-  font-weight: 900;
+  font-weight: 800;
   outline: 3px solid rgba(68, 199, 199, .38);
 }
 
@@ -606,45 +667,40 @@ details {
 .photo-collage {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: .9rem;
   max-width: 1040px;
   margin: 0 auto;
 }
 
 .photo-slot {
   position: relative;
-  display: grid;
-  min-height: 13rem;
+  min-height: 13.5rem;
   overflow: hidden;
-  place-items: center;
-  border: 8px solid var(--white);
-  border-radius: 34px;
-  background:
-    linear-gradient(135deg, rgba(246, 138, 18, .88), rgba(216, 106, 35, .88)),
-    radial-gradient(circle at 30% 20%, rgba(255, 255, 255, .34), transparent 24%);
-  box-shadow: var(--shadow);
+  aspect-ratio: 4 / 3;
+  margin: 0;
+  border: 4px solid var(--teal);
+  border-radius: 30px;
+  background: var(--white);
+  box-shadow: 0 18px 42px rgba(61, 36, 23, .16);
 }
 
 .photo-slot img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform .35s ease;
 }
 
-.photo-slot span {
-  border: 3px solid rgba(255, 255, 255, .72);
-  border-radius: 999px;
-  padding: .45rem 1rem;
-  color: var(--white);
-  font-weight: 950;
-  letter-spacing: .08em;
-  text-transform: uppercase;
+.photo-slot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 6px solid var(--white);
+  border-radius: 24px;
+  pointer-events: none;
 }
 
-.slot-two { background: linear-gradient(135deg, rgba(68, 199, 199, .92), rgba(26, 164, 164, .92)); }
-.slot-three { background: linear-gradient(135deg, rgba(184, 90, 26, .86), rgba(246, 138, 18, .88)); }
-.slot-four { background: linear-gradient(135deg, rgba(255, 244, 232, .96), rgba(68, 199, 199, .70)); }
-.slot-four span { color: var(--burnt); border-color: rgba(184, 90, 26, .45); }
+.photo-slot:hover img { transform: scale(1.04); }
 
 .info-section {
   position: relative;
@@ -689,6 +745,7 @@ details {
 .info-card strong {
   display: block;
   margin-top: .45rem;
+  font-weight: 700;
   font-size: 1.55rem;
   line-height: 1.02;
   text-transform: uppercase;
@@ -700,7 +757,8 @@ details {
   color: rgba(255, 255, 255, .90);
   text-align: center;
   font-family: "Segoe UI", system-ui, sans-serif;
-  font-weight: 900;
+  font-weight: 500;
+  line-height: 1.65;
 }
 
 .faq-list {
@@ -722,7 +780,8 @@ summary {
   padding: 1.1rem 1.2rem;
   color: var(--burnt);
   cursor: pointer;
-  font-weight: 950;
+  font-weight: 800;
+  line-height: 1.3;
   list-style: none;
   text-transform: uppercase;
 }
@@ -748,7 +807,8 @@ details p {
   margin: 0;
   padding: 0 1.2rem 1.2rem;
   font-family: "Segoe UI", system-ui, sans-serif;
-  font-weight: 700;
+  font-weight: 500;
+  line-height: 1.65;
 }
 
 .final-cta {
@@ -779,7 +839,8 @@ details p {
   margin: 1rem auto 1.5rem;
   font-family: "Segoe UI", system-ui, sans-serif;
   font-size: 1.08rem;
-  font-weight: 900;
+  font-weight: 500;
+  line-height: 1.65;
 }
 
 .shape-four {
@@ -800,7 +861,7 @@ details p {
   color: var(--burnt);
   text-align: center;
   font-family: "Segoe UI", system-ui, sans-serif;
-  font-weight: 900;
+  font-weight: 600;
 }
 
 .footer p { margin: 0; }
@@ -850,11 +911,11 @@ details p {
 @media (min-width: 640px) {
   .hero { padding-inline: 2rem; }
   .button-primary { width: auto; }
-  .hero-text { font-size: 1.2rem; }
+  .hero-text { font-size: 1.12rem; }
   .hero-ticket { max-width: 32rem; }
   .section { padding-inline: 2rem; }
-  .highlight-grid, .card-grid, .info-grid { grid-template-columns: repeat(2, 1fr); }
-  .photo-collage { grid-template-columns: repeat(2, 1fr); }
+  .highlight-grid, .card-grid, .info-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .photo-collage { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .slot-one, .slot-four { min-height: 18rem; }
   .footer { flex-direction: row; justify-content: center; }
 }
@@ -862,29 +923,60 @@ details p {
 @media (min-width: 920px) {
   .hero { padding-inline: 4rem; }
   .hero-content {
-    grid-template-columns: minmax(0, 1fr) 24rem;
+    grid-template-columns: minmax(0, 1fr) minmax(18rem, 24rem);
     align-items: center;
     max-width: 1180px;
+    min-height: calc(100svh - 6rem);
     margin: 0 auto;
   }
+  .about-layout { grid-template-columns: minmax(0, 1.08fr) minmax(18rem, .92fr); }
+  .about-photo { min-height: 24rem; }
+  .about-photo img { min-height: 24rem; }
   .hero-ticket { justify-self: end; align-self: end; margin-bottom: 4rem; }
   .shape-one { width: 25rem; height: 23rem; right: 5vw; }
   .shape-two { width: 17rem; height: 15rem; left: 6vw; bottom: 5rem; }
-  .section { padding: 5.7rem 4rem; }
+  .section { padding: 5.2rem 4rem; }
   .highlight-grid { grid-template-columns: repeat(3, 1fr); }
   .card-grid { grid-template-columns: repeat(3, 1fr); }
   .info-grid { grid-template-columns: repeat(4, 1fr); }
   .card { display: block; min-height: 11.5rem; }
   .card h3 { margin-top: 1rem; font-size: 1.35rem; }
   .photo-collage {
-    grid-template-columns: 1.1fr .85fr 1fr;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, .85fr) minmax(0, 1fr);
     grid-auto-rows: 10.5rem;
     align-items: stretch;
   }
-  .photo-slot { min-height: initial; }
+  .photo-slot { min-height: initial; aspect-ratio: auto; }
   .slot-one { grid-row: span 2; transform: rotate(-2deg); }
   .slot-two { transform: rotate(2.5deg); }
   .slot-three { grid-row: span 2; transform: rotate(1.5deg); }
   .slot-four { transform: rotate(-1.5deg); }
   .final-cta { max-width: 1120px; margin-inline: auto; }
+}
+
+
+@media (max-width: 520px) {
+  .topbar { align-items: center; }
+  .brand { gap: .5rem; font-size: .9rem; }
+  .brand-mark { width: 2.45rem; height: 2.45rem; }
+  .topbar-actions { gap: .45rem; }
+  .camp-label { display: none; }
+  .nav-link { padding: .45rem .75rem; font-size: .78rem; }
+  .hero { min-height: auto; }
+  .hero h1 { font-size: clamp(4rem, 24vw, 5.6rem); }
+  .hero h2 { max-width: 11ch; }
+  .hero-ticket { transform: none; }
+  .hero-ticket strong { font-size: clamp(2.6rem, 13vw, 3.8rem); }
+  .poster-word { font-size: clamp(3rem, 17vw, 5rem); opacity: .16; }
+  .word-descrever { right: -2.5rem; }
+  .button { width: 100%; min-height: 3.5rem; padding-inline: 1rem; }
+  .section { padding-block: 3rem; }
+  .section-heading { margin-bottom: 1.35rem; }
+  .blob-card { padding: 1.45rem; border-radius: 30px; }
+  .about-photo { min-height: 14rem; transform: none; }
+  .about-photo img { min-height: 14rem; }
+  .photo-slot { min-height: 12.75rem; border-radius: 26px; }
+  .final-cta { margin-inline: .85rem; padding: 2.4rem 1rem; border-radius: 30px; }
+  summary { padding: 1rem; }
+  details p { padding-inline: 1rem; }
 }
