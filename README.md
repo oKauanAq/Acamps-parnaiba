@@ -4,7 +4,7 @@ Landing page estática do **ACAMP’S Shalom Parnaíba — Piauí**, criada para
 
 ## Visão geral
 
-A página apresenta as principais informações do evento, explica o que é o ACAMP’S, exibe um espaço para vídeo, responde dúvidas frequentes e direciona o visitante para o WhatsApp da organização.
+A página apresenta as principais informações do evento, explica o que é o ACAMP’S, exibe um espaço para vídeo, responde dúvidas frequentes e direciona o visitante para o WhatsApp da organização e para o Instagram oficial como link secundário.
 
 ## Arquivos
 
@@ -13,15 +13,14 @@ A página apresenta as principais informações do evento, explica o que é o AC
 - `script.js` — interações simples: vídeo responsivo quando houver link real do YouTube e FAQ em formato acordeão.
 - `README.md` — instruções de uso e publicação.
 
-## Como personalizar os links
+## Links oficiais
 
-Antes de publicar, substitua os placeholders abaixo no arquivo `index.html`:
+Os links oficiais já estão configurados no arquivo `index.html`:
 
-- `COLOCAR_LINK_WHATSAPP_AQUI` pelo link oficial do WhatsApp.
-- `COLOCAR_LINK_INSTAGRAM_AQUI` pelo link oficial do Instagram.
-- `COLOCAR_LINK_VIDEO_AQUI` por um link do YouTube, caso o vídeo já esteja disponível.
+- WhatsApp: <https://w.app/y9ivzq>
+- Instagram: <https://www.instagram.com/juventudeparnaiba?igsh=cDZhOXZucGlqOWpo>
 
-Se o vídeo continuar como placeholder, a página exibirá automaticamente o bloco **“Vídeo em breve”**.
+O vídeo permanece como placeholder (`COLOCAR_LINK_VIDEO_AQUI`) e a página exibirá automaticamente o bloco **“Vídeo em breve”**.
 
 ## Como publicar no GitHub Pages
 
