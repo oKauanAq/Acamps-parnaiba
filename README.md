@@ -4,7 +4,7 @@ Landing page estática do **ACAMP’S Shalom Parnaíba — Piauí**, criada para
 
 ## Visão geral
 
-A página apresenta as principais informações do evento, explica o que é o ACAMP’S, exibe um espaço para vídeo, responde dúvidas frequentes e direciona o visitante para o WhatsApp da organização e para o Instagram oficial como link secundário.
+A página apresenta as principais informações do evento, explica o que é o ACAMP’S, exibe um espaço para vídeo, responde dúvidas frequentes e direciona os botões principais de inscrição/chamada para o WhatsApp da organização e mantém o Instagram oficial nos links de rede social.
 
 ## Arquivos
 
@@ -15,7 +15,7 @@ A página apresenta as principais informações do evento, explica o que é o AC
 
 ## Links oficiais
 
-Os links oficiais já estão configurados no arquivo `index.html`:
+Os links oficiais já estão configurados no arquivo `index.html`; os botões principais de inscrição/chamada apontam para o WhatsApp e os links de rede social apontam para o Instagram:
 
 - WhatsApp: <https://w.app/y9ivzq>
 - Instagram: <https://www.instagram.com/juventudeparnaiba?igsh=cDZhOXZucGlqOWpo>
