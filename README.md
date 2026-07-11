@@ -17,7 +17,7 @@ A página apresenta as principais informações do evento, explica o que é o AC
 
 Os links oficiais já estão configurados no arquivo `index.html`; os botões principais de inscrição/chamada apontam para o WhatsApp e os links de rede social apontam para o Instagram:
 
-- WhatsApp: <https://w.app/y9ivzq>
+- WhatsApp: <https://wa.me/558699007732>
 - Instagram: <https://www.instagram.com/juventudeparnaiba?igsh=cDZhOXZucGlqOWpo>
 
 O vídeo oficial está incorporado por meio do YouTube nocookie:
